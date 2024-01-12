@@ -1,13 +1,13 @@
-function solution(lottos, win_nums) {
+function solution(lotto, win_num) {
     const rank = [6, 6, 5, 4, 3, 2, 1]; // 각 순위에 해당하는 맞힌 번호의 개수
 
-    const zeroCount = lottos.filter(num => num === 0).length; // 알아볼 수 없는 번호의 개수
-    const matchCount = lottos.filter(num => win_nums.includes(num)).length; // 일치하는 번호의 개수
+    const zeroCount = lotto.filter(num => num === 0).length; // 알아볼 수 없는 번호의 개수
+    const matchCount = lotto.filter(num => win_num.includes(num)).length; // 일치하는 번호의 개수
 
-    const highestRank = rank[zeroCount + matchCount]; // 최고 순위
-    const lowestRank = rank[matchCount]; // 최저 순위
+    const highRank = rank[zeroCount + matchCount]; // 최고 순위
+    const lowRank = rank[matchCount]; // 최저 순위
 
-    return [highestRank, lowestRank];
+    return [highRank, lowRank];
 }
 
 // 테스트 케이스
